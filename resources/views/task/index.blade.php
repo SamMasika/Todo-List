@@ -28,5 +28,7 @@
   
 </div>
 
-
+<div class="">
+    <a href="/dashboard" class="btn btn-primary float px-4"><i class="fa fa-arrow-left"></i>Back</a>
+</div>
 @endsection
