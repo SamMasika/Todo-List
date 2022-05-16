@@ -27,9 +27,10 @@
                         @endif
                     </td>
                     <td class="text-right">
-                        <a href="{{asset('/' . $task->id . '/edit')}}" class="text-warning">Edit</a>
-                        <a href="{{asset('/' . $task->id . '/iscompleted')}}" class="text-success">iscompleted</a>
-                        <a href="{{asset('/' . $task->id . '/delete')}}" class="text-danger">Delete</a>
+                        <a href="{{asset('/' . $task->id . '/edit')}}" class="text-warning"><i class="fa fa-edit"></i></a>
+                      
+                        <a href="{{asset('/' . $task->id . '/delete')}}" class="text-danger"><i class="fa fa-trash"></i></a>
+                        <a href="{{asset('/' . $task->id . '/iscompleted')}}" class="text-success">Completed</a>
                     </td>
                 </tr>
             @endforeach
