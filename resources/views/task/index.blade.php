@@ -28,14 +28,13 @@
                     </td>
                     <td class="text-right">
                         <a href="{{asset('/' . $task->id . '/edit')}}" class="text-warning"><i class="fa fa-edit"></i></a>
-                      
-                        <a href="{{asset('/' . $task->id . '/delete')}}" class="text-danger"><i class="fa fa-trash"></i></a>
+                     <a href="{{asset('/' . $task->id . '/delete')}}" class="text-danger"><i class="fa fa-trash"></i></a>
                         <a href="{{asset('/' . $task->id . '/iscompleted')}}" class="text-success">Completed</a>
                     </td>
                 </tr>
             @endforeach
         </table>
-
+        <a href="/dashboard" class="btn btn-primary float px-4"><i class="fa fa-arrow-left"></i>Back</a>
     </div>
 </div>
 </div>
