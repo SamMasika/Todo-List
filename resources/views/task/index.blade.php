@@ -27,8 +27,9 @@
                     </td>
                     <td class="text-right">
                         <a href="{{asset('/' . $task->id . '/edit')}}" class="text-warning"><i class="fa fa-edit"></i></a>
-                     <a href="{{asset('/' . $task->id . '/delete')}}" class="text-danger"><i class="fa fa-trash"></i></a>
                         <a href="{{asset('/' . $task->id . '/iscompleted')}}" class="text-primary">Completed</a>
+                        <a href="{{asset('/' . $task->id . '/delete')}}" class="text-danger"><i class="fa fa-trash"></i></a>
+                       
                     </td>
                 </tr>
             @endforeach
