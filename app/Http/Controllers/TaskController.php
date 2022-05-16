@@ -9,8 +9,11 @@ class TaskController extends Controller
 {
     
         public function index(){
-            $tasks =Task::orderBy('iscompleted')->get();
-            return view('task.index')->with(['tasks' => $tasks]);
+           
+
+            $tasks = Task::where("iscompleted", false)->get();
+$completed_tasks = Task::where("iscompleted", true)->get();
+return view("task.index", compact("tasks", "completed_tasks"));
         }
     
         public function create(){

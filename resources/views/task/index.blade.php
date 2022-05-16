@@ -11,33 +11,57 @@
         </div>
          </h3>
     
-<div class="card">
-    <div class="card-header">Tasks</div>
 
-    <div class="card-body">
-        <table class="table table-striped">
+   
+   
+        <table class="table table-bordered">
+            <thead><strong>Running Tasks</strong></thead>
+            <tr>
+                <th>Task</th>
+                <th>Action</th>
+            </tr>
             @foreach ($tasks as $task)
                 <tr>
+                    
                     <td>
-                        @if ($task->iscompleted)
-                        <span style="text-decoration:line-through">{{$task->task}}</span>
-                        @else
-                            {{ $task->task}}
-                        @endif
+                              {{ $task->task}}
                     </td>
                     <td class="text-right">
-                        <a href="{{asset('/' . $task->id . '/edit')}}" class="text-warning"><i class="fa fa-edit"></i></a>
-                        <a href="{{asset('/' . $task->id . '/iscompleted')}}" class="text-primary">Completed</a>
-                        <a href="{{asset('/' . $task->id . '/delete')}}" class="text-danger"><i class="fa fa-trash"></i></a>
+                        <a href="{{asset('/' . $task->id . '/edit')}}" ><i class="fa fa-edit">Edit</i></a>
+                        <a href="{{asset('/' . $task->id . '/iscompleted')}}" >Complete</a>
+                        <a href="{{asset('/' . $task->id . '/delete')}}"><i class="fa fa-trash">Delete</i></a>
                        
                     </td>
                 </tr>
             @endforeach
+
         </table>
+
+
+
+    
+            <table class="table table-bordered">
+                <thead><strong>Completed Tasks</strong></thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Action</th>
+                </tr>
+                
+                @foreach ($completed_tasks as $c_task)
+                    <tr>
+                        <td>
+                                  {{ $c_task->task}}
+                        </td>
+                        <td>
+                            <a href="{{asset('/' . $c_task->id . '/delete')}}"><i class="fa fa-trash"></i></a>
+                        </td>
+                       
+                    </tr>
+                @endforeach
+                
+            </table>
         
     </div>
-</div>
-</div>
 </div>
 <a href="/dashboard" class="btn btn-primary float px-4"><i class="fa fa-arrow-left"></i>Back</a>
 </div>
