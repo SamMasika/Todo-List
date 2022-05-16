@@ -5,7 +5,6 @@
 
 
     <div class="container">
-    <h1>Tasks</h1>
     <h3>
         <div class="align-center">
             <a href="/create" class="btn btn-primary float px-5"><i class="fa fa-plus"></i>Create Task</a>
@@ -29,15 +28,16 @@
                     <td class="text-right">
                         <a href="{{asset('/' . $task->id . '/edit')}}" class="text-warning"><i class="fa fa-edit"></i></a>
                      <a href="{{asset('/' . $task->id . '/delete')}}" class="text-danger"><i class="fa fa-trash"></i></a>
-                        <a href="{{asset('/' . $task->id . '/iscompleted')}}" class="text-success">Completed</a>
+                        <a href="{{asset('/' . $task->id . '/iscompleted')}}" class="text-primary">Completed</a>
                     </td>
                 </tr>
             @endforeach
         </table>
-        <a href="/dashboard" class="btn btn-primary float px-4"><i class="fa fa-arrow-left"></i>Back</a>
+        
     </div>
 </div>
 </div>
 </div>
+<a href="/dashboard" class="btn btn-primary float px-4"><i class="fa fa-arrow-left"></i>Back</a>
 </div>
 @endsection
