@@ -51,7 +51,7 @@ class TaskController extends Controller
                 return redirect()->back();
             }else {
                 $task->update(['iscompleted' => true]);
-                toast( "Task is marked as incomplete!",'success');
+                toast( "Task is marked as completed!",'success');
                 return redirect()->back();
             }
         }

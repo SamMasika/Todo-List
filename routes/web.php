@@ -32,6 +32,6 @@ Route::get('/index', [TaskController::class, 'index']);
 Route::get('/create', [TaskController::class, 'create']);
 Route::post('/upload', [TaskController::class, 'upload']);
 Route::get('/{id}/edit', [TaskController::class, 'edit']);
-Route::patch('/update', [TaskController::class, 'update']);
+Route::patch('/update', [TaskController::class, 'update'])->name('tasks.update');
 Route::get('/{id}/iscompleted', [TaskController::class, 'iscompleted']);
-Route::get('/{id}/delete', [TaskController::class, 'delete']);
+Route::get('/{id}/delete', [TaskController::class, 'delete'])->name('delete');

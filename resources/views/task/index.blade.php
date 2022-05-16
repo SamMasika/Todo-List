@@ -10,25 +10,34 @@
         <div class="align-center">
             <a href="/create" class="btn btn-primary float px-5"><i class="fa fa-plus"></i>Create Task</a>
         </div>
-        
-    </h3>
+         </h3>
     
-    @foreach($tasks as $task)
-        <li>
-            @if($task->iscompleted)
-                <span style="text-decoration:line-through">{{$task->task}}</span>
-            @else 
-                {{$task->task}}
-            @endif
-            <a href="{{asset('/' . $task->id . '/edit')}}">Edit</a>
-            <a href="{{asset('/' . $task->id . '/iscompleted')}}">iscompleted</a>
-            <a href="{{asset('/' . $task->id . '/delete')}}">Delete</a>
-        </li>
-    @endforeach
-  
-</div>
+<div class="card">
+    <div class="card-header">Tasks</div>
 
-<div class="">
-    <a href="/dashboard" class="btn btn-primary float px-4"><i class="fa fa-arrow-left"></i>Back</a>
+    <div class="card-body">
+        <table class="table table-striped">
+            @foreach ($tasks as $task)
+                <tr>
+                    <td>
+                        @if ($task->iscompleted)
+                        <span style="text-decoration:line-through">{{$task->task}}</span>
+                        @else
+                            {{ $task->task}}
+                        @endif
+                    </td>
+                    <td class="text-right">
+                        <a href="{{asset('/' . $task->id . '/edit')}}" class="text-warning">Edit</a>
+                        <a href="{{asset('/' . $task->id . '/iscompleted')}}" class="text-success">iscompleted</a>
+                        <a href="{{asset('/' . $task->id . '/delete')}}" class="text-danger">Delete</a>
+                    </td>
+                </tr>
+            @endforeach
+        </table>
+
+    </div>
+</div>
+</div>
+</div>
 </div>
 @endsection
